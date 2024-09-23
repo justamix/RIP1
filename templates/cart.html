@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Корзина{% endblock %}
+{% block t1 %}Корзина{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+<div class="space">
+    <div class="container">
+        <div class="container1">
+            <a>Время начала: {{ time_start }}</a>
+            <a>Дата: {{ date }}</a>
+            <a>Название: {{ event_name }}</a>
+            <a>ФИО: {{ ФИО }}</a>
+        </div>
+        {% for classroom in classrooms %}
+            {% include 'classroom_for_cart.html' with element=classroom %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
